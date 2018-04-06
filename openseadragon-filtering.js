@@ -281,7 +281,8 @@
                 var imgData = context.getImageData(
                     0, 0, context.canvas.width, context.canvas.height);
                 var pixels = imgData.data;
-                for (var i = 0; i < pixels.length; i += 4) {
+                var pixelsLength = pixels.length;
+                for (var i = 0; i < pixelsLength; i += 4) {
                     pixels[i] = precomputedBrightness[pixels[i]];
                     pixels[i + 1] = precomputedBrightness[pixels[i + 1]];
                     pixels[i + 2] = precomputedBrightness[pixels[i + 2]];
@@ -302,7 +303,8 @@
                 var imgData = context.getImageData(
                     0, 0, context.canvas.width, context.canvas.height);
                 var pixels = imgData.data;
-                for (var i = 0; i < pixels.length; i += 4) {
+                var pixelsLength = pixels.length;
+                for (var i = 0; i < pixelsLength; i += 4) {
                     pixels[i] = precomputedContrast[pixels[i]];
                     pixels[i + 1] = precomputedContrast[pixels[i + 1]];
                     pixels[i + 2] = precomputedContrast[pixels[i + 2]];
