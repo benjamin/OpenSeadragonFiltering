@@ -234,6 +234,7 @@
             return [];
         }
 
+        var itemIndex = instance.viewer.world.getIndexOfItem(item);
         var globalProcessors = null;
         for (var i = 0; i < instance.filters.length; i++) {
             var filter = instance.filters[i];
@@ -241,6 +242,9 @@
                 globalProcessors = filter.processors;
             } else if (filter.items === item ||
                 $.isArray(filter.items) && filter.items.indexOf(item) >= 0) {
+                return filter.processors;
+            } else if (filter.itemIndexes === itemIndex ||
+                ($.isArray(filter.itemIndexes) && filter.itemIndexes.indexOf(itemIndex) >= 0)) {
                 return filter.processors;
             }
         }
