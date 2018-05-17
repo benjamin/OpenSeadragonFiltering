@@ -238,7 +238,7 @@
         var globalProcessors = null;
         for (var i = 0; i < instance.filters.length; i++) {
             var filter = instance.filters[i];
-            if (!filter.items) {
+            if (!filter.items && filter.itemIndexes == undefined) {
                 globalProcessors = filter.processors;
             } else if (filter.items === item ||
                 $.isArray(filter.items) && filter.items.indexOf(item) >= 0) {
